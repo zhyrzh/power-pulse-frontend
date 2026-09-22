@@ -63,7 +63,7 @@ const Home = () => {
               />
               <button
                 type="submit"
-                className="bg-accent text-[#1A1102] border-none rounded-sm py-3.5 px-5.5 font-semibold text-[15px] cursor-pointer whitespace-nowrap transition-[background_0.15s_ease,transform_0.1s_ease] hover:bg-[#FFC658] active:translate-y-0.5 focus-visible:outline-[2px_solid_var(--light)] focus-visible:outline-offset-2"
+                className="bg-accent text-[#1A1102] border-none rounded-sm py-3.5 px-5.5 font-semibold text-[15px] cursor-pointer whitespace-nowrap transition-[background_0.15s_ease,transform_0.1s_ease] hover:bg-[#FFC658] active:translate-y-0.5 focus-visible:outline-[2px_solid_var(--light)] focus-visible:outline-offset-2 w-full md:max-w-fit"
               >
                 Start receiving alerts
               </button>
@@ -138,17 +138,22 @@ const Home = () => {
         </div>
       </section>
 
-      {/* <section className="py-19 px-0 xl:py-24" id="signup-bottom">
-        <div className="wrap">
-          <div className="cta-inner">
+      <section className="py-13 px-0 sm:py-19 xl:py-24" id="signup-bottom">
+        <div className="px-8 py-0 max-w-280 mx-auto xl:max-w-330 xl:px-10">
+          <div className="grid gap-9 items-center bg-surface border border-solid border-line rounded-lg grid-cols-1 px-7 py-9 md:py-12 md:px-11 md:grid-cols-[1.1fr_1fr] xl:py-14 xl:px-13">
             <div>
-              <h2>Get the next outage in your inbox.</h2>
-              <p>
+              <h2 className="text-[26px] leading-[1.2]">
+                Get the next outage in your inbox.
+              </h2>
+              <p className="text-muted text-[15px]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor.
               </p>
             </div>
-            <form className="signup" id="signup-form-bottom">
+            <form
+              className="flex gap-2.5 max-w-full flex-wrap md:max-w-120"
+              id="signup-form-bottom"
+            >
               <label
                 htmlFor="email-bottom"
                 className="sr-only"
@@ -158,31 +163,40 @@ const Home = () => {
               </label>
               <input
                 type="email"
+                className="flex-[1_1_240px] bg-surface border border-solid border-line rounded-sm text-light py-3.5 px-4 text-[15px] outline-none transition-[border-color_0.15s_ease] placeholder:text-[#5E6E85] focus:text-accent focus-visible:outline-[2px_solid_var(--accent)] focus-visible:outline-offset-2"
                 id="email-bottom"
                 name="email"
                 placeholder="you@email.com"
                 required
               />
-              <button type="submit" className="btn">
+              <button
+                type="submit"
+                className="bg-accent text-[#1A1102] border-none rounded-sm py-3.5 px-5.5 font-semibold text-[15px] cursor-pointer whitespace-nowrap transition-[background_0.15s_ease,transform_0.1s_ease] hover:bg-[#FFC658] active:translate-y-0.5 focus-visible:outline-[2px_solid_var(--light)] focus-visible:outline-offset-2 w-full md:max-w-fit"
+              >
                 Start receiving alerts
               </button>
             </form>
           </div>
         </div>
-      </section> */}
+      </section>
 
-      {/* <footer>
-        <div className="wrap">
-          <div className="logo" style={{ fontSize: "font-size:15px" }}>
+      <footer className="py-7 px-0">
+        <div className="px-8 py-0 max-w-280 mx-auto xl:max-w-330 xl:px-10 flex flex-col items-start flex-wrap gap-3 sm:flex-row sm:justify-between sm:items-center">
+          <div
+            className={`flex items-center gap-2.5 ${spaceGrotesk.className} font-bold text-[15px]`}
+            style={{ fontSize: "font-size:15px" }}
+          >
             <span
-              className="dot"
+              className="w-2 h-2 rounded-[50%] bg-accent shadow-[0_0_0_4px_rgba(255,182,39,0.15)] shrink-0"
               style={{ width: "6px", height: "6px" }}
             ></span>
             PowerPulse
           </div>
-          <p>&copy; 2026 PowerPulse. Placeholder content for preview only.</p>
+          <p className="text-[#5E6E85] text-[13px]">
+            &copy; 2026 PowerPulse. Placeholder content for preview only.
+          </p>
         </div>
-      </footer> */}
+      </footer>
     </Fragment>
   );
 };
