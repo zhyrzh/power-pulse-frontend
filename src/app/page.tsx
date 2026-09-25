@@ -53,14 +53,14 @@ const Home = () => {
               >
                 Email address
               </label>
-              <input
+              {/* <input
                 className="flex-[1_1_240px] bg-surface border border-solid border-line rounded-sm text-light py-3.5 px-4 text-[15px] outline-none transition-[border-color_0.15s_ease] placeholder:text-[#5E6E85] focus:text-accent focus-visible:outline-[2px_solid_var(--accent)] focus-visible:outline-offset-2"
                 type="email"
                 id="email-top"
                 name="email"
                 placeholder="you@email.com"
                 required
-              />
+              /> */}
               <button
                 type="submit"
                 className="flex-[1_1_240px] bg-accent text-[#1A1102] border-none rounded-sm py-3.5 px-5.5 font-semibold text-[15px] cursor-pointer  transition-[background_0.15s_ease,transform_0.1s_ease] hover:bg-[#FFC658] active:translate-y-0.5 focus-visible:outline-[2px_solid_var(--light)] focus-visible:outline-offset-2"
@@ -161,14 +161,14 @@ const Home = () => {
               >
                 Email address
               </label>
-              <input
+              {/* <input
                 type="email"
                 className="flex-[1_1_240px] bg-surface border border-solid border-line rounded-sm text-light py-3.5 px-4 text-[15px] outline-none transition-[border-color_0.15s_ease] placeholder:text-[#5E6E85] focus:text-accent focus-visible:outline-[2px_solid_var(--accent)] focus-visible:outline-offset-2"
                 id="email-bottom"
                 name="email"
                 placeholder="you@email.com"
                 required
-              />
+              /> */}
               <button
                 type="submit"
                 className="bg-accent text-[#1A1102] border-none rounded-sm py-3.5 px-5.5 font-semibold text-[15px] cursor-pointer whitespace-nowrap transition-[background_0.15s_ease,transform_0.1s_ease] hover:bg-[#FFC658] active:translate-y-0.5 focus-visible:outline-[2px_solid_var(--light)] focus-visible:outline-offset-2 w-full md:max-w-fit"
