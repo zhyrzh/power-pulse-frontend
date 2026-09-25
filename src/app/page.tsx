@@ -29,20 +29,20 @@ const Home = () => {
         </div>
       </header>
 
-      <section className="px-0 pt-25 pb-22">
-        <div className="px-8 py-0 max-w-280 mx-auto xl:max-w-330 xl:px-10 grid grid-cols-1 gap-14 items-center xl:gap-22 md:grid-cols-[1.05fr_0.95fr]">
+      <section className="px-0 py-11 sm:py-14 xl:pt-32 xl:pb-27">
+        <div className="px-8 py-0 max-w-280 mx-auto xl:max-w-330 xl:px-10 grid grid-cols-1 gap-14 items-center xl:gap-22 md:grid-cols-[1.05fr_0.95fr] text-center md:text-left">
           <div>
             <h1 className="text-[clamp(34px,3.4vw,58px)] leading-[1.08] mb-5.5">
               Know before the power goes out.
             </h1>
-            <p className="text-muted text-[17px] max-w-[46ch] mb-8.5">
+            <p className="text-muted text-[17px] max-w-[46ch] mb-8.5 mx-auto md:mx-0">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua, ut
               enim ad minim veniam quis nostrud exercitation.
             </p>
 
             <form
-              className="flex gap-2.5 max-w-120 flex-wrap"
+              className="flex gap-2.5 max-w-120 flex-wrap mx-auto md:mx-0"
               id="signup-form"
               noValidate
             >
@@ -63,7 +63,7 @@ const Home = () => {
               />
               <button
                 type="submit"
-                className="bg-accent text-[#1A1102] border-none rounded-sm py-3.5 px-5.5 font-semibold text-[15px] cursor-pointer whitespace-nowrap transition-[background_0.15s_ease,transform_0.1s_ease] hover:bg-[#FFC658] active:translate-y-0.5 focus-visible:outline-[2px_solid_var(--light)] focus-visible:outline-offset-2 w-full md:max-w-fit"
+                className="flex-[1_1_240px] bg-accent text-[#1A1102] border-none rounded-sm py-3.5 px-5.5 font-semibold text-[15px] cursor-pointer  transition-[background_0.15s_ease,transform_0.1s_ease] hover:bg-[#FFC658] active:translate-y-0.5 focus-visible:outline-[2px_solid_var(--light)] focus-visible:outline-offset-2"
               >
                 Start receiving alerts
               </button>
@@ -100,7 +100,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-22 px-0 xl:py-28" id="about">
+      <section className="py-14 px-0 sm:py-22 xl:py-28" id="about">
         <div className="px-8 py-0 max-w-280 mx-auto xl:max-w-330 xl:px-10">
           <div className="grid grid-cols-1 gap-5 mb-14 md:grid-cols-[1fr_1.4fr] md:gap-12 xl:mb-14">
             <h2 className="text-3xl leading-[1.2]">What PowerPulse does</h2>
