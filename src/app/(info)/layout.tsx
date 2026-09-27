@@ -20,7 +20,10 @@ export const spaceGrotesk = Space_Grotesk({
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${ibmPlexSans.variable} scroll-smooth`}>
+    <html
+      lang="en"
+      className={`${ibmPlexSans.variable} ${spaceGrotesk.variable} scroll-smooth`}
+    >
       <body className="bg-primary text-light leading-[1.55] bg-[linear-gradient(var(--line)_1px,transparent_1px),linear-gradient(90deg,var(--line)_1px,transparent_1px)] bg-size-[64px_64px] font-ibm-plex bg-fixed">
         {children}
       </body>
