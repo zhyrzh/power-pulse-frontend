@@ -1,6 +1,8 @@
 import { IBM_Plex_Sans, Space_Grotesk } from "next/font/google";
 import type { Metadata } from "next";
 import "../globals.css";
+import Sidebar from "./components/Sidebar";
+import SidebarMobile from "./components/SidebarMobile";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,85 +27,11 @@ export default function AdminLayout({ children }: LayoutProps<"/admin">) {
       className={`${ibmPlexSans.variable} ${spaceGrotesk.variable} scroll-smooth`}
     >
       <body className="flex items-start min-h-dvh font-ibm-plex text-light leading-[1.55] bg-primary">
-        <aside
-          className="w-63 shrink-0 bg-surface border-r border-solid border-line flex flex-col sticky top-0 h-dvh z-30"
-          id="sidebar"
-        >
-          <div className="py-5.5 px-5 border-t border-solid border-line shrink-0">
-            <a
-              href="powerpulse-admin.html"
-              className="flex items-center gap-2.5 font-space-grotesk font-bold text-[18px] shrink-0 no-underline"
-            >
-              <span className="h-2.25 w-2.25 rounded-[50%] bg-accent shadow-[0_0_0_4px_rgba(255,182,39,0.14)] shrink-0"></span>
-              PowerPulse
-              <span className="font-ibm-plex font-semibold text-xs text-faint border border-solid border-line rounded-[3px] py-0.5 px-1.75 ml-1">
-                Admin
-              </span>
-            </a>
-          </div>
-
-          <nav className="flex flex-col flex-1 overflow-y-auto py-3.5 px-3 gap-0.5">
-            <a
-              href="powerpulse-admin.html"
-              className="flex items-center no-underline text-[14.5px] py-2.5 px-3.5 rounded-sm border-l border-solid border-accent transition-[color_0.15s_ease,background_0.15s_ease,border-color_0.15s_ease] hover:text-light hover:bg-surface-light text-light bg-surface-light"
-            >
-              Dashboard
-            </a>
-            <a
-              className="flex items-center no-underline text-[14.5px] py-2.5 px-3.5 rounded-sm border-l border-solid border-transparent transition-[color_0.15s_ease,background_0.15s_ease,border-color_0.15s_ease] text-muted hover:text-light hover:bg-surface-light"
-              href="powerpulse-manage.html#locations"
-            >
-              Locations
-            </a>
-            <a
-              className="flex items-center no-underline text-[14.5px] py-2.5 px-3.5 rounded-sm border-l border-solid border-transparent transition-[color_0.15s_ease,background_0.15s_ease,border-color_0.15s_ease] text-muted hover:text-light hover:bg-surface-light"
-              href="#"
-            >
-              Notifications
-            </a>
-            <a
-              className="flex items-center no-underline text-[14.5px] py-2.5 px-3.5 rounded-sm border-l border-solid border-transparent transition-[color_0.15s_ease,background_0.15s_ease,border-color_0.15s_ease] text-muted hover:text-light hover:bg-surface-light"
-              href="powerpulse-manage.html#users"
-            >
-              Users
-            </a>
-            <a
-              className="flex items-center no-underline text-[14.5px] py-2.5 px-3.5 rounded-sm border-l border-solid border-transparent transition-[color_0.15s_ease,background_0.15s_ease,border-color_0.15s_ease] text-muted hover:text-light hover:bg-surface-light"
-              href="#"
-            >
-              Settings
-            </a>
-          </nav>
-
-          <div className="flex items-center gap-2.5 py-4 px-5 border-t border-solid border-line shrink-0">
-            <div className="w-8 h-8 rounded-full bg-surface-light border border-solid border-line flex items-center justify-center font-space-grotesk font-semibold text-xs text-accent shrink-0">
-              JR
-            </div>
-            <div className="min-w-0 ">
-              <div className="text-[13.5px] text-light font-medium">
-                J. Reyes
-              </div>
-              <div className="text-sm text-light">Administrator</div>
-            </div>
-          </div>
-        </aside>
+        <Sidebar />
 
         <div className="sidebar-backdrop" id="sidebarBackdrop"></div>
         <div className="flex-1 min-w-0">
-          <div className="mobile-topbar md:hidden">
-            <button
-              className="nav-toggle"
-              id="navToggle"
-              aria-label="Toggle navigation"
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-            <a href="powerpulse-admin.html" className="logo">
-              <span className="dot"></span>PowerPulse
-            </a>
-          </div>
+          <SidebarMobile />
           {children}
           <footer className="border-t border-solid border-line py-6.5 px-0">
             <div className="max-w-7xl mx-auto my-0 py-0 px-8 xl:max-w-360 xl:py-0 xl:px-10 flex justify-between items-center flex-wrap gap-3">
