@@ -12,6 +12,7 @@ import {
 } from "chart.js";
 import { useEffect, useMemo, useState } from "react";
 import { DUMMY_DATA_FOR_OUTAGE_WITH_OUTAGE_COUNT } from "../../../../dummy-data";
+import OutageByMunicipalityBarangay from "./components/OutageByBarangay";
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
@@ -24,10 +25,6 @@ const COLORS = {
 
 function Dashboard() {
   const [sample] = useState(DUMMY_DATA_FOR_OUTAGE_WITH_OUTAGE_COUNT);
-
-  useEffect(() => {
-    console.log(sample, "sample");
-  }, [sample]);
 
   const orientation = "horizontal" as "horizontal" | "vertical";
   const options: ChartOptions<"bar"> = useMemo(
@@ -225,40 +222,13 @@ function Dashboard() {
               className="grid grid-cols-1 gap-4 min-w-0 lg:grid-cols-2"
               id="muniGrid"
             >
-              <div className="bg-surface border border-solid border-line rounded-lg px-5 pt-5 pb-4">
-                <div className="flex items-start justify-between gap-2.5 mb-3.5">
-                  <div>
-                    <h3 className="text-[15.5px] mb-0.75">Cebu</h3>
-                    <div className="text-faint text-xs">
-                      9 barangays monitored
-                    </div>
-                  </div>
-                  <div
-                    className="font-space-grotesk font-semibold text-[18px] text-accent shrink-0"
-                    id="muniTotal${i}"
-                  >
-                    —
-                  </div>
-                </div>
-                <div className="relative h-60 w-full min-w-0 overflow-hidden">
-                  <Bar
-                    data={{
-                      labels: sample[0].brgys.map((b) => b.name),
-                      datasets: [
-                        {
-                          label: "outage count",
-                          data: sample[0].brgys.map((b) => b.outageCount),
-                          backgroundColor: sample[0].brgys.map(
-                            (b) => b.backgroundColor,
-                          ),
-                          maxBarThickness: 28,
-                        },
-                      ],
-                    }}
-                    options={options}
-                  />
-                </div>
-              </div>
+              {sample.map((s) => (
+                <OutageByMunicipalityBarangay
+                  key={s.cityMunicipality}
+                  dataRaw={s}
+                  municipalityCityName={s.cityMunicipality}
+                />
+              ))}
             </div>
           </div>
         </section>
