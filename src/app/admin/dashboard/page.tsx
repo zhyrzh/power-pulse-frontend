@@ -1,72 +1,12 @@
 "use client";
-import { Bar } from "react-chartjs-2";
 import { Fragment } from "react/jsx-runtime";
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Tooltip,
-  Legend,
-  type ChartOptions,
-} from "chart.js";
-import { useEffect, useMemo, useState } from "react";
+import { useState } from "react";
 import { DUMMY_DATA_FOR_OUTAGE_WITH_OUTAGE_COUNT } from "../../../../dummy-data";
 import OutageByMunicipalityBarangay from "./components/OutageByBarangay";
-
-ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
-
-const COLORS = {
-  line: "#263C58",
-  muted: "#90A3BD",
-  surface2: "#1C2E4A",
-  accent: "#FFB627",
-};
 
 function Dashboard() {
   const [sample] = useState(DUMMY_DATA_FOR_OUTAGE_WITH_OUTAGE_COUNT);
 
-  const orientation = "horizontal" as "horizontal" | "vertical";
-  const options: ChartOptions<"bar"> = useMemo(
-    () => ({
-      indexAxis: orientation === "horizontal" ? "y" : "x",
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: {
-          display: false,
-          position: "bottom",
-          labels: {
-            boxWidth: 8,
-            boxHeight: 8,
-            usePointStyle: true,
-            font: { size: 12 },
-          },
-        },
-        tooltip: {
-          backgroundColor: COLORS.surface2,
-          borderColor: COLORS.line,
-          borderWidth: 1,
-          padding: 10,
-        },
-      },
-      scales: {
-        x: {
-          grid: {
-            display: orientation === "horizontal",
-            color: COLORS.surface2,
-          },
-          ticks: { color: COLORS.muted, font: { size: 11.5 } },
-        },
-        y: {
-          grid: { display: orientation === "vertical", color: COLORS.surface2 },
-          beginAtZero: true,
-          ticks: { color: COLORS.muted, font: { size: 11.5 }, precision: 0 },
-        },
-      },
-    }),
-    [orientation],
-  );
   return (
     <Fragment>
       <main className="max-w-7xl mx-auto my-0 px-8 py-0 xl:max-w-360 xl:py-0 xl:px-10">
